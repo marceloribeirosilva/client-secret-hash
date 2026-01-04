@@ -48,8 +48,6 @@ src/
 Create a `.env` file in the root directory with the following variables:
 
 ```env
-PORT=3000
-SECRET_KEY=supersecretkey
 DB_HOST=localhost
 DB_PORT=3306
 MYSQL_ROOT_PASSWORD=root
