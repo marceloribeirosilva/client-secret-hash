@@ -43,9 +43,22 @@ src/
 - Node.js (v20 or higher)
 - Docker & Docker Compose
 
-### 1. Installation
+### 1. Configuration
 
-Clone the repository and install dependencies:
+Create a `.env` file in the root directory with the following variables:
+
+```env
+PORT=3000
+SECRET_KEY=supersecretkey
+DB_HOST=localhost
+DB_PORT=3306
+MYSQL_ROOT_PASSWORD=root
+MYSQL_DATABASE=client_secret_hash
+MYSQL_USER=user
+MYSQL_PASSWORD=password
+```
+
+### 2. Database Setup
 
 ```bash
 git clone https://github.com/marceloribeirosilva/client-secret-hash.git
@@ -53,22 +66,19 @@ cd client-secret-hash
 npm install
 ```
 
-### 2. Database Setup
-
-Start the MySQL container:
-
-```bash
-docker compose up -d
-```
-
-Run the database migration to create the necessary tables:
-
-```bash
-npm run migrate
-```
-*Note: This script will create the `clients` table in the MySQL database.*
-
 ### 3. Running the Application
+
+Start the CLI application:
+
+```bash
+npm start
+```
+
+You will see the interactive menu:
+1. **Create New Client**: Generates a secure client ID and Secret. The secret is shown **ONCE**.
+2. **Login**: Verifies credentials by checking the provided ID and Secret against the stored hash.
+
+### 4. Running Tests
 
 Start the CLI application:
 
