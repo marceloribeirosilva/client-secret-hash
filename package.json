@@ -1,0 +1,25 @@
+{
+  "name": "client-secret-hash",
+  "version": "1.0.0",
+  "description": "Minimal TypeScript project",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node --env-file=.env dist/index.js",
+    "dev": "npm run build && (tsc -w --preserveWatchOutput & node --env-file=.env --watch dist/index.js)",
+    "migrate": "npm run build && node --env-file=.env dist/scripts/migrate.js",
+    "test": "npm run build && node --test dist/tests/**/*.test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/bcrypt": "^6.0.0",
+    "@types/node": "^25.0.3",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "mysql2": "^3.16.0"
+  }
+}
